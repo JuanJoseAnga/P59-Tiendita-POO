@@ -10,10 +10,12 @@ CONFIG += c++11
 
 SOURCES += \
     main.cpp \
-    principal.cpp
+    principal.cpp \
+    producto.cpp
 
 HEADERS += \
-    principal.h
+    principal.h \
+    producto.h
 
 FORMS += \
     principal.ui
