@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>761</width>
-    <height>547</height>
+    <width>810</width>
+    <height>608</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,56 +15,6 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_2">
-    <item row="1" column="0">
-     <widget class="QGroupBox" name="groupBox_3">
-      <property name="title">
-       <string>Producto</string>
-      </property>
-      <layout class="QFormLayout" name="formLayout">
-       <item row="0" column="0">
-        <widget class="QLabel" name="label_6">
-         <property name="text">
-          <string>Nombre:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="QComboBox" name="comboBox"/>
-       </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="label_7">
-         <property name="text">
-          <string>Cantidad:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="QSpinBox" name="spinBox"/>
-       </item>
-       <item row="2" column="0">
-        <widget class="QLabel" name="label_8">
-         <property name="text">
-          <string>Precio:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="QLabel" name="label_9">
-         <property name="text">
-          <string>0.00</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="1">
-        <widget class="QPushButton" name="pushButton">
-         <property name="text">
-          <string>Agregar</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
     <item row="0" column="0">
      <widget class="QGroupBox" name="groupBox_2">
       <property name="title">
@@ -72,7 +22,14 @@
       </property>
       <layout class="QGridLayout" name="gridLayout">
        <item row="6" column="0">
-        <widget class="QLineEdit" name="lineEdit_4"/>
+        <widget class="QLineEdit" name="inCorreo"/>
+       </item>
+       <item row="8" column="0">
+        <widget class="QPlainTextEdit" name="inDireccion">
+         <property name="lineWidth">
+          <number>3</number>
+         </property>
+        </widget>
        </item>
        <item row="5" column="0">
         <widget class="QLabel" name="label_3">
@@ -80,9 +37,6 @@
           <string>Teléfono</string>
          </property>
         </widget>
-       </item>
-       <item row="8" column="0">
-        <widget class="QLineEdit" name="lineEdit_5"/>
        </item>
        <item row="9" column="0">
         <widget class="QLabel" name="label_5">
@@ -92,7 +46,7 @@
         </widget>
        </item>
        <item row="0" column="0">
-        <widget class="QLineEdit" name="lineEdit"/>
+        <widget class="QLineEdit" name="inCedula"/>
        </item>
        <item row="3" column="0">
         <widget class="QLabel" name="label_2">
@@ -102,10 +56,10 @@
         </widget>
        </item>
        <item row="2" column="0">
-        <widget class="QLineEdit" name="lineEdit_2"/>
+        <widget class="QLineEdit" name="inNombre"/>
        </item>
        <item row="4" column="0">
-        <widget class="QLineEdit" name="lineEdit_3"/>
+        <widget class="QLineEdit" name="inTelefono"/>
        </item>
        <item row="1" column="0">
         <widget class="QLabel" name="label">
@@ -169,48 +123,91 @@
             <rect>
              <x>20</x>
              <y>80</y>
-             <width>55</width>
-             <height>16</height>
+             <width>91</width>
+             <height>21</height>
             </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>Arial</family>
+             <pointsize>14</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
            </property>
            <property name="text">
             <string>TOTAL:</string>
            </property>
           </widget>
-          <widget class="QLabel" name="label_13">
+          <widget class="QLabel" name="outsubtotal">
            <property name="geometry">
             <rect>
              <x>130</x>
              <y>20</y>
-             <width>55</width>
+             <width>100</width>
              <height>16</height>
             </rect>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="layoutDirection">
+            <enum>Qt::RightToLeft</enum>
            </property>
            <property name="text">
             <string>0.00</string>
            </property>
           </widget>
-          <widget class="QLabel" name="label_14">
+          <widget class="QLabel" name="outIva">
            <property name="geometry">
             <rect>
              <x>130</x>
              <y>50</y>
-             <width>55</width>
+             <width>100</width>
              <height>16</height>
             </rect>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="layoutDirection">
+            <enum>Qt::RightToLeft</enum>
            </property>
            <property name="text">
             <string>0.00</string>
            </property>
           </widget>
-          <widget class="QLabel" name="label_15">
+          <widget class="QLabel" name="outTotal">
            <property name="geometry">
             <rect>
              <x>130</x>
              <y>80</y>
-             <width>55</width>
+             <width>100</width>
              <height>16</height>
             </rect>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Arial</family>
+             <pointsize>10</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="layoutDirection">
+            <enum>Qt::RightToLeft</enum>
            </property>
            <property name="text">
             <string>0.00</string>
@@ -229,7 +226,63 @@
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
-        <widget class="QTableWidget" name="tableWidget"/>
+        <widget class="QTableWidget" name="outDetalle"/>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QGroupBox" name="groupBox_3">
+      <property name="minimumSize">
+       <size>
+        <width>300</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="title">
+       <string>Producto</string>
+      </property>
+      <layout class="QFormLayout" name="formLayout">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_6">
+         <property name="text">
+          <string>Nombre:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QComboBox" name="inProducto"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_7">
+         <property name="text">
+          <string>Cantidad:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QSpinBox" name="inCantidad"/>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_8">
+         <property name="text">
+          <string>Precio:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLabel" name="outPrecio">
+         <property name="text">
+          <string>0.00</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QPushButton" name="btnAgregar">
+         <property name="text">
+          <string>Agregar</string>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>
@@ -241,7 +294,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>761</width>
+     <width>810</width>
      <height>25</height>
     </rect>
    </property>
