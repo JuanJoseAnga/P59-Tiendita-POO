@@ -9,15 +9,23 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    acerca.cpp \
+    cliente.cpp \
+    factura.cpp \
     main.cpp \
     principal.cpp \
     producto.cpp
 
 HEADERS += \
+    acerca.h \
+    cliente.h \
+    factura.h \
     principal.h \
     producto.h
 
 FORMS += \
+    acerca.ui \
+    factura.ui \
     principal.ui
 
 # Default rules for deployment.

@@ -2,6 +2,9 @@
 #define PRINCIPAL_H
 
 #include <QMainWindow>
+#include <sstream>
+#include<vector>
+#include <string>
 
 #include "producto.h"
 
@@ -18,6 +21,8 @@ class Principal : public QMainWindow
 public:
     Principal(QWidget *parent = nullptr);
     ~Principal();
+
+    bool verCedula(QString as);
 
 private slots:
 

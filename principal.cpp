@@ -26,6 +26,131 @@ Principal::~Principal()
 {
     delete ui;
 }
+
+bool Principal::verCedula(QString as)
+{
+    bool est = true;
+    int vcedula[10];
+    int vPar[4];
+    int vImpar[5]={0};
+    int sumaPar=0;
+    int sumaImpar=0;
+    int total;
+    int nveri;
+
+    double nu;
+
+
+    do
+    {
+
+        istringstream(as)>>nu;
+        if(nu<100000000 || nu>9999999999)
+        {
+
+            est=false;
+            break;
+        }
+
+
+        //Separar string
+        QString p1=as.substr(0,1);
+        string p2=as.substr(1,1);
+        string p3=as.substr(2,1);
+        string p4=as.substr(3,1);
+        string p5=as.substr(4,1);
+        string p6=as.substr(5,1);
+        string p7=as.substr(6,1);
+        string p8=as.substr(7,1);
+        string p9=as.substr(8,1);
+        string p10=as.substr(9,1);
+
+        //Transformar string
+        istringstream(p1)>>vcedula[0];
+        istringstream(p2)>>vcedula[1];
+        istringstream(p3)>>vcedula[2];
+        istringstream(p4)>>vcedula[3];
+        istringstream(p5)>>vcedula[4];
+        istringstream(p6)>>vcedula[5];
+        istringstream(p7)>>vcedula[6];
+        istringstream(p8)>>vcedula[7];
+        istringstream(p9)>>vcedula[8];
+        istringstream(p10)>>vcedula[9];
+
+        if(vcedula[0]>2)
+        {
+
+            est = false;
+            break;
+        }
+
+        //Pares
+        vPar[0]=vcedula[1];
+        vPar[1]=vcedula[3];
+        vPar[2]=vcedula[5];
+        vPar[3]=vcedula[7];
+        //Impares
+        vImpar[0]=vcedula[0];
+        vImpar[1]=vcedula[2];
+        vImpar[2]=vcedula[4];
+        vImpar[3]=vcedula[6];
+        vImpar[4]=vcedula[8];
+
+
+        //Punto 2. Multiplicacion impar
+        for(int i=0; i<5; i++)
+        {
+            vImpar[i]=vImpar[i]*2;
+            if(vImpar[i]>9)
+            {
+                vImpar[i]=vImpar[i]-9;
+            }
+            sumaImpar += vImpar[i];
+        }
+        //Punto 3. Sumar los pares
+        for(int i=0; i<4; i++)
+        {
+            sumaPar += vPar[i];
+        }
+
+        total = sumaPar + sumaImpar;
+
+        //Punto 4. Se obtiene el modulo;
+
+        nveri = total%10;
+
+
+        //Punto 5. Numero verificador
+        if(nveri==0)
+        {
+            if(nveri==vcedula[9])
+            {
+                est=true;
+                break;
+            }else
+            {
+                est=false;
+                break;
+            }
+        }else if(nveri !=0)
+        {
+            nveri=10-nveri;
+
+            if(nveri==vcedula[9])
+            {
+                est=true;
+                break;
+            }else
+            {
+
+                est=false;
+                break;
+            }
+        }
+
+    }while(nu<100000000 || nu>9999999999 || vcedula[0]>2);
+    return est;
+}
 /**
  * @brief Principal::cargarProducto Cargar la lista de productos de la tienda
  */
