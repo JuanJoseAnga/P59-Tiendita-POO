@@ -2,6 +2,12 @@
 #define FACTURA_H
 
 #include <QDialog>
+#include <QtDebug>
+#include <QDateTime>
+#include <QFile>
+#include <QMainWindow>
+#include <QMessageBox>
+#include <QFileDialog>
 
 namespace Ui {
 class Factura;
@@ -15,8 +21,7 @@ public:
     explicit Factura(QWidget *parent = nullptr);
     ~Factura();
 
-    void setDetalles(const QString &newdetalles)
-    ;
+    void setDetalles(const QString &newdetalles);
     Ui::Factura *getUi() const;
     void setUi(Ui::Factura *newUi);
     const QString &detalles() const;
@@ -31,18 +36,28 @@ public:
     const QString &direccion() const;
     void setDireccion(const QString &newDireccion);
 
+    void insertarDatos(QString nombre, QString cedula, QString telefono, QString correo, QString direccion );
+
+    void setProducts(const QString &newProducts);
+
+    void totales(QString subTotal, QString iva, QString total);
+
+private slots:
+    void on_buttonBox_accepted();
+
 private:
     Ui::Factura *ui;
     QString m_detalles;
-    QString m_nobre;
+    QString m_nombre;
     QString m_cedula;
     QString m_correo;
     QString m_telefono;
     QString m_direccion;
 
-    void insertarDatos(QString nombre, QString cedula, QString telefono, QString correo, QString direccion );
+    QString m_products;
 
-    void muestra();
+
+    void impresion();
 
 };
 
