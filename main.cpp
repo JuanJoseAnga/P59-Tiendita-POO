@@ -26,6 +26,7 @@ int main(int argc, char *argv[])
         traducion.load(":/principal_it.qm");
     }
 
+
     // Si es diferente de español, se instala la traducción en TODA la aplicación
     if (idiomaSeleccionado != "Español"){
         a.installTranslator(&traducion);
