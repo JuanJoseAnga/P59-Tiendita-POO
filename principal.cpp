@@ -16,7 +16,7 @@ Principal::Principal(QWidget *parent)
         ui->inProducto->addItem((p->nombre()));
     }
     //Configurar cabecera de la tabla
-    QStringList cabecera = {"Cantidad", "Producto", "P. unitario","Subtotal"};
+    QStringList cabecera = {tr("Cantidad"), tr("Producto"), tr("P. unitario"),tr("Subtotal")};
     ui->outDetalle->setColumnCount(4);
     ui->outDetalle->setHorizontalHeaderLabels(cabecera);
     //Establecer el subtotal a 0
@@ -55,8 +55,6 @@ bool Principal::verCedula(QString as)
                 est=false;
                 break;
             }
-
-
             //Separar string
             QString p1=as.mid(0,1);
             QString p2=as.mid(1,1);
@@ -218,11 +216,11 @@ bool Principal::checkDatos()
 void Principal::cargarProducto()
 {
     //Crear productos "quemados" en el codigo
-    m_productos.append(new Producto(1, "Leche/u", 0.80));
-    m_productos.append(new Producto(2, "Pan/u", 0.15));
-    m_productos.append(new Producto(3, "Queso/u", 2.50));
-    m_productos.append(new Producto(4, "Huevos/u", 0.15));
-    m_productos.append(new Producto(5, "Arroz/lb", 0.40));
+    m_productos.append(new Producto(1, tr("Arroz/lb"), 0.40));
+    m_productos.append(new Producto(2, tr("Huevos/u"), 0.15));
+    m_productos.append(new Producto(3, tr("Leche/u"), 0.80));
+    m_productos.append(new Producto(4, tr("Pan/u"), 0.15));
+    m_productos.append(new Producto(5, tr("Queso/u"), 2.50));
 
 }
 
@@ -298,18 +296,13 @@ void Principal::on_btnAgregar_released()
 
     // Actualizar subtotales
     calcular(subtotal);
-
-
-
 }
-
 
 
 void Principal::on_btnLimpiar_released()
 {
     limpiar();
 }
-
 
 void Principal::on_btnFinalizar_released()
 {
@@ -322,8 +315,8 @@ void Principal::on_btnFinalizar_released()
                        ui->outDetalle->item(contador,3)->text() + "\n" ;
         contador++;
     }
-    if(checkDatos()){
 
+    if(checkDatos()){
     Factura *factura=new Factura(this);
     factura->setProducts(descripcion);
     factura->insertarDatos(ui->inCedula->text(),
@@ -338,7 +331,6 @@ void Principal::on_btnFinalizar_released()
     }
 
 }
-
 
 void Principal::on_actionAcerca_de_2_triggered()
 {

@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>Material/klipartz.com (3).png</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>principal_ca.qm</file>
+        <file>principal_it.qm</file>
+    </qresource>
+</RCC>

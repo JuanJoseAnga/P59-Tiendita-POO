@@ -117,30 +117,30 @@ void Factura::impresion()
     QString ss;
     QString encabezado= " \t //////////////////////////////////////////////////////////////////////////// \n"
                         " \t\tTIENDITA --HASTA LA VUELTA SEÑOR--\n"
-                        " \t \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ \n"
-                        " \tRUC: 9999999999\n"
-                        " \tDireccion: Humberto Albornoz Oe11-261 y Pasaje Navarro\n"
-                        " \tNumero: (02) 320-1833\n"
-                        " \t  ---      ---     ---     ---     ---     ---     ---     ---     ---     ---      ---     \n"
-                        " \t                                       CLIENTE\n"
+                        " \t \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ \n";
+                        tr(" \t(RUC: 9999999999\n");
+                        tr(" \tDireccion: Humberto Albornoz Oe11-261 y Pasaje Navarro\n");
+                        tr(" \tNumero: (02) 320-1833\n");
+                        " \t  ---      ---     ---     ---     ---     ---     ---     ---     ---     ---      ---     \n";
+                        tr(" \t                                       CLIENTE\n");
                         " \t  ---      ---     ---     ---     ---     ---     ---     ---     ---     ---      ---     \n\n";
     ss=encabezado;
     if(m_cedula!="9999999999"){
-        QString name="\tNombre:   "+m_nombre+"\n";
-        QString cedu="\tCedula:   "+m_cedula+"\n";
-        QString tele="\tTelefono:   "+m_telefono+"\n";
-        QString corr="\tCorreo:   "+m_correo+"\n";
-        QString dire="\tDirección:   "+m_direccion+"\n" +
+        QString name=tr("\tNombre:   ")+m_nombre+"\n";
+        QString cedu=tr("\tCedula:   ")+m_cedula+"\n";
+        QString tele=tr("\tTelefono:   ")+m_telefono+"\n";
+        QString corr=tr("\tCorreo:   ")+m_correo+"\n";
+        QString dire=tr("\tDirección:   ")+m_direccion+"\n" +
                 "\n\t  ---      ---     ---     ---     ---     ---     ---     ---     ---     ---      ---     ";
 
         ss+=name+cedu+tele+corr+dire+"\n"+"\n";
     }
     else {
-        QString sd="\t\tCONSUMIDOR FINAL\n\n\t///////////////////////////////////////////////////////////\n";
+        QString sd=tr("\t\tCONSUMIDOR FINAL\n\n\t///////////////////////////////////////////////////////////\n");
         ss+=sd;
     }
     QString lol;
-    lol="\tCantidad              Producto              P.Unitario              Subtotal\n\n" + m_products;
+    lol=tr("\tCantidad              Producto              P.Unitario              Subtotal\n\n") + m_products;
     ss+=lol;
 
     ui->outFactura->setPlainText(ss);
@@ -157,8 +157,8 @@ void Factura::on_buttonBox_accepted()
     }
     else {
         QMessageBox::warning(this,
-                             "Guardar datos",
-                             "No se pudo guardar el archivo");
+                             tr("Guardar datos"),
+                             tr("No se pudo guardar el archivo"));
     }
     archivo.close();
 }

@@ -26,7 +26,18 @@ FORMS += \
     factura.ui \
     principal.ui
 
+TRANSLATIONS += \
+    principal_ca.ts \
+    principal_it.ts \
+
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    Material.qrc
+
+DISTFILES += \
+    Material/klipartz.com (3).png \
+    Material/klipartz.com (3).png
